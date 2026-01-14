@@ -16,3 +16,10 @@ python .\ppc_bin_diff2.py '.\Output\clean 17489\hypervisor.bin' .\Output\rgl-pro
 
 <img width="632" height="822" alt="{E394BCC2-AA64-40FC-A828-E2225B1D0EC1}" src="https://github.com/user-attachments/assets/1e0af09e-4388-4c90-85e2-472c62595292" />
 
+
+Will also emit patches in MAKEPATCH format, but beware, you need to fix up anything with a relative address emitted as an absolute address, as conditional branches etc need to be relative. It's good enough for getting started I suppose. It is not always aware if code was a .long instruction for data, for example, like setting a version.
+
+
+python .\ppc_bin_diff2.py '.\Output\clean 17489\hypervisor.bin' .\Output\rgl-proto\hypervisor.bin --endian big --makepatch
+
+<img width="616" height="861" alt="{43CBB51E-722A-4B79-BF44-F17389FF6B3B}" src="https://github.com/user-attachments/assets/081a8208-3b69-4ec5-9d79-ab2379608345" />
