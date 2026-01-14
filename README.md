@@ -3,6 +3,7 @@ MCE to UART will replace the machine check handler in the xbox 360s hypervisor, 
 In the header of the ASM file, there are 2 set variables you need to adjust per hypervisor. Find where the machine check handler is, (usually around address 0x200) and also find a big empty spot for the code to be stored. When a machine check occurs, it'll write the link address to UART and then halt. Also, this will prevent the post code from becoming 0xFF. 
 
 Here is an example of the UART output 
+
 <img width="380" height="179" alt="image" src="https://github.com/user-attachments/assets/b36583f0-9c33-4466-b9c7-6c7f0e885e7a" />
 
 
